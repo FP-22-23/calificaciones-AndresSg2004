@@ -14,30 +14,30 @@ def calcula_nota_cuatrimestre(Parc,Cues,Proy):
     return to_return
 
 def calcula_nota_evaluacion_continua(Parc,Cues,Proy):
-    Cuatr0 = calcula_nota_cuatrimestre(Parc[0],Cues[0] + Cues[1] + Cues[2],Proy[0])
-    Cuatr1 = calcula_nota_cuatrimestre(Parc[1],Cues[3] + Cues[4] + Cues[5],Proy[0])
-    to_return = (Cuatr0+Cuatr1)/2
-    if Cuatr0 < 4 or Cuatr1 < 4:
+    Cuatr1 = calcula_nota_cuatrimestre(Parc[0],Cues[0] + Cues[1] + Cues[2],Proy[0])
+    Cuatr2 = calcula_nota_cuatrimestre(Parc[1],Cues[3] + Cues[4] + Cues[5],Proy[1])
+    to_return = (Cuatr1+Cuatr2)/2
+    if Cuatr1 < 4 or Cuatr2 < 4:
         to_return = 4
     return to_return
         
 def pregunta_cues():
     Cues = []
     for i in range(6):
-        Cues.append(int(input(f"Nota del cuestionario {i+1}:  ")))
+        Cues.append(int(input(f"Nota del cuestionario número {i+1}:  ")))
     print("Gracias.")
     print("\n")
     tuple(Cues)
     return(Cues)
     
 def pregunta_proy():
-    Proy = [int(input("Nota del proyecto 1: ")),int(input("Nota del proyecto 2: "))]
+    Proy = [int(input("Nota del proyecto de python: ")),int(input("Nota del proyecto de java: "))]
     print("\n")
     tuple(Proy)
     return(Proy)
 
 def pregunta_prac():
-    Prac = [int(input("Nota del 1º parcial: ")),int(input("Nota del 2º parcial: "))]
+    Prac = [int(input("Nota del primer parcial: ")),int(input("Nota del segundo parcial: "))]
     print("\n")
     tuple(Prac)
     return(Prac)
